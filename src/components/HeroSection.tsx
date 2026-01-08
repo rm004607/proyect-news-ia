@@ -1,34 +1,11 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
-const newsTranslations = [
-  { word: "NEWS", lang: "English" },
-  { word: "NOTICIAS", lang: "Spanish" },
-  { word: "新闻", lang: "Chinese" },
-  { word: "ニュース", lang: "Japanese" },
-  { word: "أخبار", lang: "Arabic" },
-  { word: "NOTÍCIAS", lang: "Portuguese" },
-  { word: "НОВОСТИ", lang: "Russian" },
-  { word: "समाचार", lang: "Hindi" },
-  { word: "NACHRICHTEN", lang: "German" },
-  { word: "ACTUALITÉS", lang: "French" },
-];
-
 interface HeroSectionProps {
   isCompact: boolean;
 }
 
 const HeroSection = ({ isCompact }: HeroSectionProps) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % newsTranslations.length);
-    }, 2500);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <motion.section
       className="relative flex flex-col items-center justify-center overflow-hidden"
@@ -58,23 +35,19 @@ const HeroSection = ({ isCompact }: HeroSectionProps) => {
       />
 
       <div className="relative z-10 text-center px-4">
-        {/* Animated news word */}
+        {/* Static news word */}
         <div className="relative h-[140px] md:h-[220px] lg:h-[280px] flex items-center justify-center overflow-visible">
-          <AnimatePresence mode="wait">
-            <motion.h1
-              key={currentIndex}
-              className="hero-text absolute whitespace-nowrap"
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -40 }}
-              transition={{
-                duration: 0.6,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-            >
-              {newsTranslations[currentIndex].word}
-            </motion.h1>
-          </AnimatePresence>
+          <motion.h1
+            className="hero-text absolute whitespace-nowrap"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.6,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+          >
+            NEWS
+          </motion.h1>
         </div>
 
         {/* Subtitle */}

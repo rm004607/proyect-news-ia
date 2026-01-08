@@ -56,19 +56,19 @@ const NewsFeed = ({ isLoading, news, error }: NewsFeedProps) => {
         <div className="space-y-6">
           {isLoading
             ? Array.from({ length: 5 }).map((_, i) => (
-                <SkeletonCard key={i} index={i} />
-              ))
+              <SkeletonCard key={i} index={i} />
+            ))
             : news.map((item, index) => (
-                <NewsCard
-                  key={item.id}
-                  title={item.title}
-                  source={item.source}
-                  date={item.date}
-                  summary={item.summary}
-                  url={item.url}
-                  index={index}
-                />
-              ))}
+              <NewsCard
+                key={item.id}
+                title={item.title}
+                source={item.source}
+                date={item.date}
+                summary={item.summary}
+                url={item.url}
+                index={index}
+              />
+            ))}
         </div>
       </motion.div>
     </section>

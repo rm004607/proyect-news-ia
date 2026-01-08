@@ -10,7 +10,7 @@ const Footer = () => {
     >
       <div className="max-w-[720px] mx-auto px-4 md:px-6">
         <p className="text-center text-sm text-muted-foreground/70">
-          Built with modern web technologies and AI-assisted summaries.
+          Global Tech News &copy; {new Date().getFullYear()} - Summarized by Artificial Intelligence
         </p>
       </div>
     </motion.footer>
