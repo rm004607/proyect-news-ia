@@ -59,11 +59,11 @@ const HeroSection = ({ isCompact }: HeroSectionProps) => {
 
       <div className="relative z-10 text-center px-4">
         {/* Animated news word */}
-        <div className="relative h-[120px] md:h-[180px] lg:h-[240px] flex items-center justify-center overflow-hidden">
+        <div className="relative h-[140px] md:h-[220px] lg:h-[280px] flex items-center justify-center overflow-visible">
           <AnimatePresence mode="wait">
             <motion.h1
               key={currentIndex}
-              className="hero-text absolute"
+              className="hero-text absolute whitespace-nowrap"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -40 }}
